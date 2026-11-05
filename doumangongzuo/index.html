@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抖漫工作室-漫画创作团队_原创漫画与作品展示</title>
+<meta name="description" content="抖漫工作室是专注于原创漫画创作的团队，这里提供抖漫工作室的作品展示、创作成员介绍、连载更新节奏与读者互动方式，了解抖漫工作室的漫画内容与团队日常。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a2b'/%3E%3Cpath d='M18 22h10v20H18zM36 22h10v20H36z' fill='%23ffd166'/%3E%3Cpath d='M18 30h28v4H18z' fill='%23ef476f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#161a2b;
+  --ink-2:#242a44;
+  --paper:#f6f3ec;
+  --paper-2:#fffdf7;
+  --line:#d9d2c3;
+  --accent:#ef476f;
+  --accent-2:#ffd166;
+  --teal:#0e7c7b;
+  --muted:#5d6478;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block;}
+a{color:var(--teal);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,243,236,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{width:40px;height:40px;flex:0 0 auto;}
+.brand-text{
+  font-size:1.18rem;font-weight:800;letter-spacing:.5px;
+  color:var(--ink);
+}
+.brand-text small{display:block;font-size:.62rem;font-weight:500;color:var(--muted);letter-spacing:2px;}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  color:var(--ink-2);font-size:.92rem;font-weight:600;
+  padding:6px 12px;border-radius:999px;text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.nav a:hover{background:var(--ink);color:var(--paper-2);text-decoration:none;}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%, rgba(239,71,111,.14), transparent 42%),
+    radial-gradient(circle at 6% 88%, rgba(14,124,123,.13), transparent 46%),
+    var(--paper-2);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;
+  align-items:center;padding:54px 0 48px;
+}
+.eyebrow{
+  display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:2px;
+  color:var(--accent);border:1px dashed var(--accent);
+  padding:3px 10px;border-radius:6px;margin-bottom:16px;
+}
+h1{
+  font-size:clamp(1.9rem,4.4vw,3rem);
+  line-height:1.25;margin:0 0 16px;letter-spacing:1px;
+  font-weight:900;
+}
+h1 em{font-style:normal;color:var(--accent);}
+.hero-lead{font-size:1.02rem;color:var(--ink-2);max-width:34em;margin:0 0 24px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-weight:700;font-size:.95rem;
+  text-decoration:none;border:2px solid var(--ink);transition:transform .15s,box-shadow .15s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px);}
+.btn-primary{background:var(--ink);color:var(--paper-2);box-shadow:0 6px 0 rgba(22,26,43,.18);}
+.btn-primary:hover{color:var(--accent-2);}
+.btn-ghost{background:transparent;color:var(--ink);}
+.btn[aria-disabled="true"]{background:var(--accent-2);border-color:var(--accent-2);color:var(--ink);cursor:not-allowed;opacity:.95;}
+.hero-figure{
+  background:var(--ink);border-radius:20px;padding:18px;
+  box-shadow:0 18px 40px -22px rgba(22,26,43,.6);
+}
+.hero-figure figcaption{
+  color:#c9cbd8;font-size:.78rem;letter-spacing:1px;margin-top:10px;text-align:center;
+}
+
+/* section base */
+section{padding:52px 0;}
+.section-head{margin-bottom:26px;}
+.section-kicker{
+  font-size:.76rem;font-weight:800;letter-spacing:3px;color:var(--teal);
+  text-transform:uppercase;
+}
+h2{
+  font-size:clamp(1.35rem,2.6vw,1.9rem);
+  margin:6px 0 10px;font-weight:900;letter-spacing:.5px;
+}
+.section-head p{margin:0;color:var(--muted);max-width:52em;}
+
+/* works */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.work-card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .18s,box-shadow .18s;
+}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px -18px rgba(22,26,43,.5);}
+.work-cover{background:var(--ink-2);aspect-ratio:3/2;}
+.work-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.work-body h3{margin:0;font-size:1.05rem;font-weight:800;}
+.tag{
+  align-self:flex-start;font-size:.72rem;font-weight:700;
+  background:rgba(14,124,123,.12);color:var(--teal);
+  padding:2px 9px;border-radius:5px;letter-spacing:.5px;
+}
+.work-body p{margin:0;font-size:.9rem;color:var(--muted);flex:1;}
+
+/* team */
+.team-band{background:var(--ink);color:#e8e6ef;}
+.team-band .section-kicker{color:var(--accent-2);}
+.team-band h2{color:#fff;}
+.team-band .section-head p{color:#b9bdd0;}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.member{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);padding:18px;
+}
+.member .avatar{width:46px;height:46px;border-radius:50%;background:var(--accent-2);display:grid;place-items:center;font-weight:900;color:var(--ink);margin-bottom:12px;font-size:1.05rem;}
+.member h3{margin:0 0 4px;font-size:.98rem;font-weight:800;color:#fff;}
+.member .role{font-size:.76rem;color:var(--accent-2);font-weight:700;letter-spacing:1px;margin-bottom:8px;}
+.member p{margin:0;font-size:.84rem;color:#b9bdd0;line-height:1.65;}
+
+/* rhythm + notes */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start;}
+.schedule{list-style:none;margin:0;padding:0;border-left:3px solid var(--accent);}
+.schedule li{padding:0 0 20px 20px;position:relative;}
+.schedule li::before{
+  content:"";position:absolute;left:-9px;top:6px;width:14px;height:14px;
+  border-radius:50%;background:var(--paper);border:3px solid var(--accent);
+}
+.schedule strong{display:block;font-size:.98rem;}
+.schedule span{font-size:.86rem;color:var(--muted);}
+.note-card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.note-card h3{margin:0 0 10px;font-size:1.05rem;}
+.note-card p{margin:0 0 12px;font-size:.92rem;color:var(--ink-2);}
+.note-card p:last-child{margin-bottom:0;}
+.quote{
+  border-left:4px solid var(--teal);padding:4px 0 4px 14px;
+  font-size:.9rem;color:var(--muted);font-style:normal;
+}
+
+/* faq */
+.faq-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+details{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;
+}
+details[open]{border-color:var(--teal);}
+summary{
+  cursor:pointer;font-weight:800;font-size:.98rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";font-weight:900;color:var(--teal);font-size:1.1rem;}
+details[open] summary::after{content:"–";}
+details p{margin:12px 0 0;font-size:.9rem;color:var(--muted);}
+
+/* cta */
+.cta{
+  background:linear-gradient(120deg,var(--accent) 0%,#c92f57 100%);
+  color:#fff;border-radius:22px;padding:38px 34px;
+  display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+}
+.cta h2{color:#fff;margin:0 0 6px;}
+.cta p{margin:0;color:rgba(255,255,255,.85);font-size:.94rem;max-width:36em;}
+.cta .btn-primary{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 6px 0 rgba(0,0,0,.15);}
+
+/* footer */
+.site-footer{
+  background:var(--ink);color:#a9aec4;padding:34px 0 26px;margin-top:20px;
+}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.footer-brand{font-weight:900;color:#fff;font-size:1.05rem;letter-spacing:.5px;}
+.footer-brand span{display:block;font-size:.76rem;font-weight:500;color:#8b91a8;letter-spacing:1px;margin-top:4px;}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.86rem;}
+.footer-links a{color:#c9cde0;}
+.footer-note{font-size:.78rem;color:#7d839a;margin-top:22px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:40px 0 36px;gap:28px;}
+  .works-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;}
+  .faq-list{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .header-inner{padding:10px 0;}
+  .nav a{padding:5px 9px;font-size:.85rem;}
+  .works-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  .cta{padding:28px 22px;}
+  .hero-actions .btn{flex:1 1 auto;justify-content:center;}
+  section{padding:40px 0;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="抖漫工作室 首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#161a2b"/>
+        <path d="M17 20h11v24H17z" fill="#ffd166"/>
+        <path d="M36 20h11v24H36z" fill="#ffd166"/>
+        <path d="M17 30h30v5H17z" fill="#ef476f"/>
+        <circle cx="22.5" cy="27" r="2.2" fill="#161a2b"/>
+        <circle cx="41.5" cy="27" r="2.2" fill="#161a2b"/>
+      </svg>
+      <span class="brand-text">抖漫工作室<small>DOUMAN STUDIO</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#works">原创作品</a>
+      <a href="#team">创作成员</a>
+      <a href="#rhythm">更新节奏</a>
+      <a href="#faq">常见问答</a>
+      <a href="#join">联系合作</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">原创漫画 · 团队创作</span>
+        <h1 id="hero-title">抖漫工作室</h1>
+        <p class="hero-lead">抖漫工作室是一个以原创漫画为核心的创作团队，围绕短篇与连载两种形式持续产出作品。这里集中展示抖漫工作室的作品目录、成员分工、更新安排与读者互动方式，方便新读者一次了解团队在做什么、更新到哪一步。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#works">浏览作品目录</a>
+          <a class="btn btn-ghost" href="#rhythm">查看更新节奏</a>
+        </div>
+      </div>
+      <figure class="hero-figure" style="margin:0">
+        <svg viewBox="0 0 420 300" role="img" aria-label="抖漫工作室漫画分镜示意图">
+          <rect width="420" height="300" fill="#242a44"/>
+          <rect x="22" y="22" width="176" height="118" rx="8" fill="#f6f3ec"/>
+          <rect x="222" y="22" width="176" height="118" rx="8" fill="#ffd166"/>
+          <rect x="22" y="160" width="376" height="118" rx="8" fill="#f6f3ec"/>
+          <circle cx="72" cy="72" r="20" fill="#ef476f"/>
+          <path d="M52 112c8-18 32-18 40 0z" fill="#161a2b"/>
+          <path d="M252 60h116M252 78h96M252 96h110" stroke="#161a2b" stroke-width="7" stroke-linecap="round"/>
+          <path d="M52 200h300M52 222h260M52 244h180" stroke="#161a2b" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="352" cy="238" r="26" fill="none" stroke="#0e7c7b" stroke-width="6"/>
+        </svg>
+        <figcaption>分镜草图 · 抖漫工作室创作示意</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-kicker">Works</span>
+        <h2>抖漫工作室的原创作品</h2>
+        <p>作品以短篇为主、连载为辅，题材覆盖校园日常与轻奇幻。以下条目按团队公开的创作方向整理，方便读者按类型快速找到想读的内容。</p>
+      </div>
+      <div class="works-grid">
+        <article class="work-card">
+          <svg class="work-cover" viewBox="0 0 300 200" role="img" aria-label="校园日常短篇封面示意">
+            <rect width="300" height="200" fill="#0e7c7b"/>
+            <circle cx="90" cy="86" r="40" fill="#ffd166"/>
+            <path d="M40 168c14-34 86-34 100 0z" fill="#f6f3ec"/>
+            <rect x="188" y="52" width="80" height="96" rx="8" fill="#f6f3ec" opacity=".9"/>
+            <path d="M202 78h52M202 98h40M202 118h48" stroke="#161a2b" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <div class="work-body">
+            <span class="tag">校园日常</span>
+            <h3>课间十分钟</h3>
+            <p>以教室与走廊为舞台的短篇系列，每话聚焦一个小场景，用对白和表情推进节奏，适合碎片时间阅读。</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <svg class="work-cover" viewBox="0 0 300 200" role="img" aria-label="轻奇幻连载封面示意">
+            <rect width="300" height="200" fill="#161a2b"/>
+            <circle cx="212" cy="66" r="34" fill="#ef476f"/>
+            <path d="M40 168l44-70 34 44 26-32 60 58z" fill="#ffd166"/>
+            <path d="M40 168h220" stroke="#f6f3ec" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <div class="work-body">
+            <span class="tag">轻奇幻</span>
+            <h3>灯塔与信使</h3>
+            <p>连载向的长篇尝试，世界观围绕海边小镇展开。抖漫工作室在这部作品里重点练习场景连续性与分镜转场。</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <svg class="work-cover" viewBox="0 0 300 200" role="img" aria-label="单页实验短篇封面示意">
+            <rect width="300" height="200" fill="#f6f3ec"/>
+            <rect x="26" y="26" width="110" height="148" rx="8" fill="#242a44"/>
+            <rect x="150" y="26" width="124" height="68" rx="8" fill="#ef476f"/>
+            <rect x="150" y="106" width="124" height="68" rx="8" fill="#ffd166"/>
+            <path d="M46 150h70M46 128h56" stroke="#ffd166" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <div class="work-body">
+            <span class="tag">实验短篇</span>
+            <h3>一页练习集</h3>
+            <p>成员自主命题的单页作品合集，用来测试构图与色彩方案，也会收录读者投稿的改编尝试。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="team-band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-kicker">Team</span>
+        <h2>抖漫工作室的创作分工</h2>
+        <p>团队按职能拆分工作，画稿、脚本、上色与排版各有负责人，跨职能协作时以分镜稿为统一参照。</p>
+      </div>
+      <div class="team-grid">
+        <article class="member">
+          <div class="avatar">编</div>
+          <h3>编剧组</h3>
+          <div class="role">STORY</div>
+          <p>负责故事大纲、对白与节奏控制，先出文字脚本，再与分镜负责人对齐每话的信息量。</p>
+        </article>
+        <article class="member">
+          <div class="avatar">画</div>
+          <h3>主笔组</h3>
+          <div class="role">LINE ART</div>
+          <p>承担线稿与角色表演，按分镜稿落实镜头，遇到转场问题时回到脚本层面调整。</p>
+        </article>
+        <article class="member">
+          <div class="avatar">色</div>
+          <h3>上色组</h3>
+          <div class="role">COLOR</div>
+          <p>维护作品配色规范，统一不同成员之间的色值，保证连载画面在视觉上保持连续。</p>
+        </article>
+        <article class="member">
+          <div class="avatar">排</div>
+          <h3>排版与运营</h3>
+          <div class="role">LAYOUT</div>
+          <p>处理对话框、拟声字与页面留白，并整理发布信息，把更新安排同步给读者。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="rhythm">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-kicker">Schedule</span>
+        <h2>更新节奏与创作流程</h2>
+        <p>抖漫工作室采用固定周期推进作品，从脚本到成稿按阶段验收，减少返工对更新时间的影响。</p>
+      </div>
+      <div class="split">
+        <ol class="schedule">
+          <li><strong>脚本定稿</strong><span>确认本话目标与结尾钩子，输出文字稿。</span></li>
+          <li><strong>分镜绘制</strong><span>按页面拆分镜头，标注对白位置与阅读顺序。</span></li>
+          <li><strong>线稿与上色</strong><span>主笔与上色组并行推进，统一角色比例。</span></li>
+          <li><strong>排版校对</strong><span>检查对话框遮挡、字距与跨页衔接。</span></li>
+          <li><strong>发布与反馈</strong><span>整理读者留言，作为下一话调整的参考。</span></li>
+        </ol>
+        <div class="note-card">
+          <h3>读者可以期待什么</h3>
+          <p>短篇系列以单话完整故事为主，适合随时从任意一话进入；连载作品则会保留前情提要，降低追更门槛。</p>
+          <p>抖漫工作室会在每部作品下标注当前进度，读者可据此判断是否适合从头读起。</p>
+          <p class="quote">“把每一话当作独立的小作品来打磨，是我们对更新节奏的基本要求。”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-kicker">FAQ</span>
+        <h2>关于抖漫工作室的常见问题</h2>
+        <p>新读者最常问的几件事，集中在这里说明。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>抖漫工作室主要做什么类型的漫画？</summary>
+          <p>以校园日常短篇和轻奇幻连载为主，另有成员自主命题的实验短篇，用于尝试新的构图与配色。</p>
+        </details>
+        <details>
+          <summary>作品从哪里开始读比较合适？</summary>
+          <p>短篇可从任意一话进入；连载作品建议从第一话读起，页面内会标注当前进度，便于判断阅读顺序。</p>
+        </details>
+        <details>
+          <summary>更新频率是怎样的？</summary>
+          <p>按固定周期推进，从脚本、分镜到成稿分阶段验收。具体更新时间以各作品页面的进度标注为准。</p>
+        </details>
+        <details>
+          <summary>可以联系抖漫工作室合作吗？</summary>
+          <p>可以通过下方联系入口说明合作方向与需求范围，团队会根据当前排期回复是否接洽。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>关注抖漫工作室的后续更新</h2>
+          <p>作品目录与更新进度会持续维护。想第一时间读到新话，可以先把本站加入收藏，或通过下方入口与团队取得联系。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#works">回到作品目录</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;background:#161a2b;color:#fff;border-color:#161a2b;">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">抖漫工作室<span>原创漫画 · 团队创作</span></div>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#works">原创作品</a>
+        <a href="#team">创作成员</a>
+        <a href="#rhythm">更新节奏</a>
+        <a href="#faq">常见问答</a>
+        <a href="#join">联系合作</a>
+      </nav>
+    </div>
+    <p class="footer-note">抖漫工作室作品与成员信息以本站公开内容为准，更新进度以各作品页面标注为准。</p>
+  </div>
+</footer>
+
+</body>
+        </html>
