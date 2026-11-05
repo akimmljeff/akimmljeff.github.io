@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白嫖者联盟官方网站-白嫖者联盟官网入口_免费资源聚合与使用指引</title>
+<meta name="description" content="白嫖者联盟官方网站首页，汇集免费资源聚合导航、使用指引与常见问题说明，帮助访问者快速了解白嫖者联盟官方网站的栏目结构、资源类型与访问方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312303b'/%3E%3Cpath d='M20 40 L32 18 L44 40' fill='none' stroke='%234fd6b0' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='47' r='4' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#12303b;
+    --ink-soft:#3a5763;
+    --mint:#1f9d7f;
+    --mint-deep:#0f6b57;
+    --mint-pale:#e6f6f1;
+    --sand:#f7f4ec;
+    --gold:#e0a02c;
+    --line:#d8e4e0;
+    --white:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--mint-deep);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img,svg{max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:18px;padding:12px 0;}
+  .logo{display:flex;align-items:center;gap:10px;flex-shrink:1;min-width:0;}
+  .logo-mark{
+    width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+    background:var(--ink);display:grid;place-items:center;
+  }
+  .logo-mark svg{width:22px;height:22px;}
+  .logo-text{
+    font-weight:800;font-size:17px;letter-spacing:.2px;
+    color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  nav.main{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:14.5px;color:var(--ink-soft);padding:6px 10px;border-radius:8px;
+  }
+  nav.main a:hover{background:var(--mint-pale);color:var(--mint-deep);text-decoration:none;}
+  .menu-btn{display:none;margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 11px;font-size:14px;color:var(--ink);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 88% -10%, #d8f3ea 0%, rgba(216,243,234,0) 62%),
+      linear-gradient(180deg,#fbfdfc 0%, #ffffff 100%);
+    border-bottom:1px solid var(--line);
+    padding:46px 0 40px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;color:var(--mint-deep);
+    background:var(--mint-pale);border:1px solid #c9ebe0;
+    padding:4px 12px;border-radius:999px;letter-spacing:.4px;
+  }
+  h1{
+    font-size:clamp(26px,3.6vw,40px);
+    line-height:1.28;margin:16px 0 14px;letter-spacing:-.3px;font-weight:800;
+  }
+  .lead{font-size:16.5px;color:var(--ink-soft);margin:0 0 22px;max-width:34em;}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-block;padding:11px 22px;border-radius:10px;font-weight:700;font-size:15px;
+    border:1px solid transparent;transition:.18s;
+  }
+  .btn-primary{background:var(--mint-deep);color:#fff;}
+  .btn-primary:hover{background:#0b5445;text-decoration:none;}
+  .btn-ghost{background:#fff;color:var(--mint-deep);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--mint);text-decoration:none;}
+  .btn-disabled{background:#eef2f0;color:#8aa39b;border-color:#e0e7e4;cursor:not-allowed;}
+  .stat-row{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;}
+  .stat b{display:block;font-size:22px;color:var(--ink);line-height:1.2;}
+  .stat span{font-size:13px;color:var(--ink-soft);}
+
+  .hero-art{
+    background:var(--ink);border-radius:22px;padding:22px;color:#d9f2ea;
+    box-shadow:0 18px 40px -22px rgba(18,48,59,.55);
+  }
+  .hero-art h2{font-size:14px;margin:0 0 14px;color:#9fe3cd;letter-spacing:1px;font-weight:700;}
+  .art-list{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+  .art-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#cfe9e1;}
+  .dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:8px;}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0;}
+  section.alt{background:var(--sand);}
+  .sec-head{max-width:44em;margin-bottom:28px;}
+  .sec-head h2{font-size:clamp(20px,2.4vw,26px);margin:0 0 10px;font-weight:800;letter-spacing:-.2px;}
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:15.5px;}
+  .eyebrow{font-size:12.5px;font-weight:700;color:var(--mint);letter-spacing:1.6px;text-transform:uppercase;margin:0 0 8px;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;display:flex;flex-direction:column;gap:8px;
+    transition:.18s;
+  }
+  .card:hover{border-color:#b7ded2;box-shadow:0 12px 26px -20px rgba(18,48,59,.45);transform:translateY(-2px);}
+  .card .ico{width:34px;height:34px;border-radius:9px;background:var(--mint-pale);display:grid;place-items:center;margin-bottom:4px;}
+  .card h3{font-size:16.5px;margin:0;font-weight:700;}
+  .card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+  .card .tag{font-size:12px;color:var(--mint-deep);font-weight:700;letter-spacing:.4px;}
+
+  .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step;}
+  .steps li{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;position:relative;
+  }
+  .steps li::before{
+    counter-increment:step;content:counter(step);
+    display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;
+    background:var(--ink);color:#fff;font-size:14px;font-weight:800;margin-bottom:10px;
+  }
+  .steps h3{margin:0 0 6px;font-size:16px;}
+  .steps p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start;}
+  .prose p{margin:0 0 14px;font-size:15.5px;color:var(--ink-soft);}
+  .prose strong{color:var(--ink);}
+  .side-note{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:10px;padding:18px 20px;
+  }
+  .side-note h3{margin:0 0 8px;font-size:15.5px;}
+  .side-note p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+  details.faq{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:12px;overflow:hidden;
+  }
+  details.faq summary{
+    cursor:pointer;padding:16px 20px;font-weight:700;font-size:15.5px;list-style:none;
+    display:flex;justify-content:space-between;gap:14px;align-items:center;
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{content:"+";font-size:20px;color:var(--mint);line-height:1;font-weight:400;}
+  details.faq[open] summary::after{content:"–";}
+  details.faq .ans{padding:0 20px 18px;margin:0;font-size:14.8px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:14px;}
+
+  .download-box{
+    background:linear-gradient(135deg,#0f6b57,#12303b);
+    color:#e8f6f1;border-radius:20px;padding:34px 32px;
+    display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  }
+  .download-box h2{margin:0 0 8px;font-size:22px;color:#fff;}
+  .download-box p{margin:0;font-size:14.5px;color:#bfe3d8;max-width:38em;}
+
+  footer.site{background:var(--ink);color:#b9d3cb;padding:36px 0 28px;font-size:14px;}
+  .foot-grid{display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap;align-items:flex-start;}
+  footer.site .logo-text{color:#fff;}
+  footer.site a{color:#cfe9e1;}
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .copyright{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#8fb3a9;}
+
+  @media (max-width:880px){
+    .hero-grid,.split{grid-template-columns:1fr;}
+    .cards,.steps{grid-template-columns:1fr 1fr;}
+    .hero-art{order:2;}
+  }
+  @media (max-width:640px){
+    nav.main{display:none;}
+    nav.main.open{display:flex;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 4vw;flex-direction:column;}
+    header.site{position:relative;}
+    .menu-btn{display:block;}
+    .logo-text{font-size:15px;}
+    .cards,.steps{grid-template-columns:1fr;}
+    section{padding:38px 0;}
+    .hero{padding:32px 0 30px;}
+    .download-box{padding:26px 20px;}
+    .stat-row{gap:18px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="白嫖者联盟官方网站 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 16 L12 5 L18 16" stroke="#4fd6b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="19" r="1.8" fill="#ffd166"/></svg>
+      </span>
+      <span class="logo-text">白嫖者联盟官方网站</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sitemenu" onclick="var m=document.getElementById('sitemenu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">栏目</button>
+    <nav class="main" id="sitemenu" aria-label="主导航">
+      <a href="#resources">资源导航</a>
+      <a href="#howto">使用指引</a>
+      <a href="#guide">平台说明</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">下载说明</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">免费资源聚合 · 使用指引</span>
+        <h1>白嫖者联盟官方网站</h1>
+        <p class="lead">白嫖者联盟官方网站是一个以免费资源聚合为核心的导航型站点首页。在这里，访问者可以按类别浏览整理好的资源入口、了解白嫖者联盟官方网站的栏目结构，并按照使用指引完成查找与访问。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#resources">进入资源导航</a>
+          <a class="btn btn-ghost" href="#howto">查看使用指引</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>5</b><span>主要栏目分区</span></div>
+          <div class="stat"><b>3</b><span>步完成查找</span></div>
+          <div class="stat"><b>持续</b><span>整理与补充</span></div>
+        </div>
+      </div>
+      <aside class="hero-art" aria-label="首页信息速览">
+        <h2>首页速览</h2>
+        <ul class="art-list">
+          <li><span class="dot"></span>按资源类别划分栏目，减少无序翻找</li>
+          <li><span class="dot"></span>每条入口说明资源类型与适用场景</li>
+          <li><span class="dot"></span>使用指引覆盖查找、核对与访问流程</li>
+          <li><span class="dot"></span>常见问题集中回应访问中的典型疑问</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Resources</p>
+        <h2>资源导航：按类别找到你需要的入口</h2>
+        <p>白嫖者联盟官方网站把分散的免费资源按用途归类，访问者不必在多个页面之间来回跳转，可以从下面的分区直接进入对应内容。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="#0f6b57" stroke-width="1.8"/><path d="M8 20h8" stroke="#0f6b57" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="tag">学习与工具</span>
+          <h3>学习资料与软件工具</h3>
+          <p>整理公开可用的学习资料、文档模板与常用工具入口，适合需要快速补齐基础材料的访问者。</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#0f6b57" stroke-width="1.8"/><path d="M12 8v4.5l3 1.8" stroke="#0f6b57" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="tag">限时与活动</span>
+          <h3>限时免费与活动信息</h3>
+          <p>汇总有时效性的免费开放信息，标注时间范围，提醒访问者在有效期内查看与使用。</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="#0f6b57" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="tag">导航与索引</span>
+          <h3>常用站点导航索引</h3>
+          <p>按主题整理常用站点入口，为白嫖者联盟官方网站的访问者提供一份可直接使用的索引清单。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How to use</p>
+        <h2>使用指引：三步完成一次查找</h2>
+        <p>首次访问白嫖者联盟官方网站，可以按下面的顺序操作，避免在多个分区之间反复比较。</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>先定类别</h3>
+          <p>先判断自己需要的是学习资料、限时信息还是站点索引，从对应栏目进入，缩小范围。</p>
+        </li>
+        <li>
+          <h3>再看说明</h3>
+          <p>每条入口都附有资源类型与适用场景说明，确认与需求一致后再打开，减少无效点击。</p>
+        </li>
+        <li>
+          <h3>最后核对</h3>
+          <p>留意页面标注的时间与适用范围，涉及第三方站点的内容以对方页面的实际说明为准。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap split">
+      <div class="prose">
+        <p class="eyebrow">About the site</p>
+        <h2 style="margin:0 0 14px;font-size:clamp(20px,2.4vw,26px);">白嫖者联盟官方网站是什么</h2>
+        <p>白嫖者联盟官方网站的定位是免费资源的聚合与导航：它本身不生产资源，而是把公开可获取的入口整理成清晰的栏目结构，让访问者少走弯路。理解这一点，能帮助你更准确地使用这个首页。</p>
+        <p><strong>先看结构，再看内容。</strong>首页把内容分为资源导航、使用指引、平台说明、常见问题与下载说明几个部分。资源导航负责“去哪里找”，使用指引负责“怎么找”，平台说明负责“这个站点做什么”，常见问题负责“遇到疑问怎么办”。</p>
+        <p><strong>时效信息要看标注。</strong>限时免费与活动类内容带有明显的时间属性，页面会标注范围；超出范围的条目应以来源页面的最新说明为准。白嫖者联盟官方网站不对第三方页面的后续变动作出承诺。</p>
+        <p><strong>第三方内容需自行判断。</strong>导航指向的站点由各自的运营方维护，访问者在注册、下载或使用前，应自行核对条款、权限与安全事项。白嫖者联盟官方网站提供的是索引与说明，不代替第三方服务作出保证。</p>
+        <p>如果你希望更快上手，建议从资源导航进入，按类别浏览一遍，再回到使用指引对照操作步骤。白嫖者联盟官方网站的栏目命名与说明文字都尽量直白，目的就是让查找过程本身不成为负担。</p>
+      </div>
+      <aside class="side-note">
+        <h3>访问前的小提示</h3>
+        <p>遇到需要填写个人信息的页面，先确认来源与用途；遇到来源不明的下载链接，优先放弃。导航只是起点，判断仍由你自己完成。</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>常见问题</h2>
+        <p>关于白嫖者联盟官方网站的定位、内容范围与使用方式，下面几条是访问者最常提出的疑问。</p>
+      </div>
+      <details class="faq" open>
+        <summary>白嫖者联盟官方网站主要提供什么？</summary>
+        <p class="ans">它提供免费资源的分类导航与使用说明，包括学习资料、限时免费信息与常用站点索引，帮助访问者更快定位到需要的入口。</p>
+      </details>
+      <details class="faq">
+        <summary>导航里的资源都是本站提供的吗？</summary>
+        <p class="ans">不是。白嫖者联盟官方网站以索引和说明为主，具体内容由对应第三方站点提供，访问与使用需遵循对方页面的规则。</p>
+      </details>
+      <details class="faq">
+        <summary>限时信息过期了怎么办？</summary>
+        <p class="ans">限时类内容带有时间标注，过期后建议以来源页面的最新公告为准，或在资源导航中查找同类替代入口。</p>
+      </details>
+      <details class="faq">
+        <summary>使用白嫖者联盟官方网站需要付费吗？</summary>
+        <p class="ans">浏览首页的导航与说明内容不需要付费。若第三方页面出现收费提示，请以该页面自身的说明为准，自行判断是否继续。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="download-box">
+        <div>
+          <h2>下载说明</h2>
+          <p>白嫖者联盟官方网站的下载入口正在整理中，当前按钮暂未开放。后续开放后，可从本区域获取对应的说明文件与使用清单。</p>
+        </div>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="logo-text" style="font-weight:800;font-size:16px;">白嫖者联盟官方网站</span>
+        <p style="margin:10px 0 0;max-width:28em;font-size:14px;color:#a9c7be;">免费资源的聚合导航与使用指引，帮助访问者按类别快速定位入口。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#resources">资源导航</a>
+        <a href="#howto">使用指引</a>
+        <a href="#guide">平台说明</a>
+        <a href="#faq">常见问题</a>
+        <a href="#download">下载说明</a>
+      </div>
+    </div>
+    <div class="copyright">© 白嫖者联盟官方网站 · 本页内容为导航与说明，第三方资源以来源页面为准。</div>
+  </div>
+</footer>
+
+</body>
+</html>
